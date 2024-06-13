@@ -6,12 +6,12 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Vue from '@vitejs/plugin-vue'
 import VueRouter from 'unplugin-vue-router/vite'
 import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import { VitePluginRadar } from 'vite-plugin-radar'
 import { VitePWA } from 'vite-plugin-pwa'
 
 // Utilities
 import { defineConfig } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
-import { VitePluginRadar } from 'vite-plugin-radar'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -33,13 +33,13 @@ export default defineConfig({
         ignoreURLParametersMatching: [/.*/]
       },
       manifest: {
-        // 定義網站名稱
+        // 名稱
         name: '番茄鐘',
         short_name: '番茄鐘',
-        // 工具列的顏色
-        theme_color: '#f00',
+        // 工具列顏色
+        theme_color: '#ffa7a7',
         // 啟動畫面背景色
-        background_color: '#121212',
+        background_color: '#ffa7a7',
         // 啟動網址
         start_url: './',
         // PWA 範圍，超出範圍會用瀏覽器顯示
@@ -60,7 +60,11 @@ export default defineConfig({
         ]
       }
     }),
-    VitePluginRadar,
+    VitePluginRadar({
+      analytics: {
+        id: 'G-6V0YQR3ZTB'
+      }
+    }),
     VueRouter(),
     Layouts(),
     Vue({
