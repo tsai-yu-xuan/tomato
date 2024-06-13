@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar style="background: #3b55ce;">
+    <v-app-bar style="background: #e63d1f;">
       <v-container class="d-flex align-center" >
         <v-app-bar-title>番茄鐘</v-app-bar-title>
         <v-btn prepend-icon="mdi-home" to="/">首頁</v-btn>
@@ -8,7 +8,7 @@
         <v-btn prepend-icon="mdi-cog" to="/settings">設定</v-btn>
       </v-container>
     </v-app-bar>
-    <v-main style="background: #35212a;">
+    <v-main style="background: #404040;">
       <!-- Component = 目前路由應該顯示的元件 -->
       <router-view v-slot="{ Component }" >
         <!-- keep-alive 保持被包住的元件不被銷毀 -->
